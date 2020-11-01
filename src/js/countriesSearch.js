@@ -31,8 +31,8 @@ function parseData(data) {
 	if (data.length > 10) {
 		error({ text: "Too many countries, try to specify the request" });
 	} else if (data.length > 1) {
-		refs.output.insertAdjacentHTML("afterbegin", `<ul class="simple-list">${data.reduce((acc, { name }) => acc + `<li><a href="#">${name}</a></li>`, "")}</ul>`);
-		listOfLinks = document.querySelector(".simple-list");
+		refs.output.insertAdjacentHTML("afterbegin", `<ul class="proposed-list">${data.reduce((acc, { name }) => acc + `<li><a href="#">${name}</a></li>`, "")}</ul>`);
+		listOfLinks = document.querySelector(".proposed-list");
 		listOfLinks.addEventListener("click", showSelectedCountry);
 	} else {
 		refs.output.insertAdjacentHTML("afterbegin", countryForm(data[0]));
